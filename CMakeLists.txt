@@ -4,7 +4,8 @@ project(cadex_test_case)
 set(CMAKE_CXX_STANDARD 17)
 set(COMPILE_FLAGS "-Wall -Werror -Wpedantic -Wextra")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
-set(SRCS ${PROJECT_SOURCE_DIR}/src/main.cpp)
+set(SRCS ${PROJECT_SOURCE_DIR}/src/main.cpp
+         ${PROJECT_SOURCE_DIR}/src/curves.cpp)
 
 add_executable(cadex_test_case ${SRCS})
 
