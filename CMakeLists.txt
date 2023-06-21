@@ -9,3 +9,7 @@ set(SRCS ${PROJECT_SOURCE_DIR}/src/main.cpp)
 add_executable(cadex_test_case ${SRCS})
 
 target_include_directories(cadex_test_case PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+enable_testing()
+
+#add_subdirectory(tests)
