@@ -19,9 +19,10 @@ public:
     virtual Point getDerivativePoint(const double& t) const = 0;
 };
 
-class Circle : ICurve {
+class Circle : public ICurve {
 public:
-    Circle(double radius) : radius_(radius) { }
+    Circle() : radius_(0) { }
+    explicit Circle(double radius) : radius_(radius) { }
 
     Point getPoint(const double& t) const override;
     Point getDerivativePoint(const double& t) const override;
@@ -29,8 +30,9 @@ private:
     double radius_;
 };
 
-class Ellipse : ICurve {
+class Ellipse : public ICurve {
 public:
+    Ellipse() : x_semi_radius_(0), y_semi_radius_(0) { }
     Ellipse(double x_semi_radius, double y_semi_radius) :
         x_semi_radius_(x_semi_radius), y_semi_radius_(y_semi_radius) { }
 
@@ -41,8 +43,9 @@ private:
     double y_semi_radius_;
 };
 
-class Helix : ICurve {
+class Helix : public ICurve {
 public:
+    Helix() : radius_(0), step_(0) { }
     Helix(double radius, double step) : radius_(radius), step_(step) { }
 
     Point getPoint(const double& t) const override;
