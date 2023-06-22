@@ -18,7 +18,11 @@ void printCoordsAt(const double& t, const std::list<std::shared_ptr<ICurve>>& cu
 
 void populateWithCircles(const std::list<std::shared_ptr<ICurve>>& curves, std::list<std::shared_ptr<Circle>>& circles)
 {
-    //
+    std::copy_if(curves.begin(), curves.end(), std::back_inserter(circles),
+                 [](const std::shared_ptr<ICurve>& curve)
+   {
+        return std::dynamic_pointer_cast<Circle>(curve);
+   });
 }
 
 double sumRadii(const std::list<std::shared_ptr<ICurve>>& curves)
