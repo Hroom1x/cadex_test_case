@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <memory>
 #include <sstream>
 #include <list>
@@ -13,8 +14,8 @@ const double TASK_PARAMETER = M_PI_4;
 
 std::string formatPointToStr(Point point);
 
-void printCoordsAt(const double& t, const std::list<ICurve>& curves, std::ostream& output);
+void printCoordsAt(const double& t, const std::list<std::shared_ptr<ICurve>>& curves, std::ostream& output);
 
-void populateWithCircles(const std::list<std::shared_ptr<ICurve>>& curves, std::list<Circle>& circles);
+void populateWithCircles(const std::list<std::shared_ptr<ICurve>>& curves, std::list<std::shared_ptr<Circle>>& circles);
 
-double sumRadii(const std::list<ICurve>& curves);
+double sumRadii(const std::list<std::shared_ptr<ICurve>>& curves);
