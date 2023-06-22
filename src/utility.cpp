@@ -25,7 +25,12 @@ void populateWithCircles(const std::list<std::shared_ptr<ICurve>>& curves, std::
    });
 }
 
-double sumRadii(const std::list<std::shared_ptr<ICurve>>& curves)
+double sumCirclesRadii(const std::list<std::shared_ptr<Circle>>& circles)
 {
-    //
+    double result = 0;
+    std::for_each(circles.begin(), circles.end(), [&result](const std::shared_ptr<Circle>& circle)
+    {
+        result += circle->getRadius();
+    });
+    return result;
 }

@@ -26,6 +26,7 @@ public:
 
     Point getPoint(const double& t) const override;
     Point getDerivativePoint(const double& t) const override;
+    double getRadius() const;
 private:
     double radius_;
 };

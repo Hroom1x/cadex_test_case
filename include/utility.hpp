@@ -18,4 +18,4 @@ void printCoordsAt(const double& t, const std::list<std::shared_ptr<ICurve>>& cu
 
 void populateWithCircles(const std::list<std::shared_ptr<ICurve>>& curves, std::list<std::shared_ptr<Circle>>& circles);
 
-double sumRadii(const std::list<std::shared_ptr<ICurve>>& curves);
+double sumCirclesRadii(const std::list<std::shared_ptr<Circle>>& circles);
