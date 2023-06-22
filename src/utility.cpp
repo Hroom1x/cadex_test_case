@@ -8,10 +8,13 @@ std::string formatPointToStr(Point point)
 
 void printCoordsAt(const double& t, const std::list<std::shared_ptr<ICurve>>& curves, std::ostream& output)
 {
+    if (curves.empty())
+        return;
+    output << "(Point), (Derivative)" << std::endl;
     std::for_each(curves.begin(), curves.end(), [t, &output](const std::shared_ptr<ICurve>& curve)
     {
-        output << "Point: " << formatPointToStr(curve->getPoint(t));
-        output << ", derivative: " << formatPointToStr(curve->getDerivativePoint(t)) << std::endl;
+        output << formatPointToStr(curve->getPoint(t));
+        output << ", " << formatPointToStr(curve->getDerivativePoint(t)) << std::endl;
     });
 }
 
