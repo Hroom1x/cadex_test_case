@@ -6,7 +6,7 @@
 
 
 int main() {
-    Circle circle(10);
+    Circle circle(0);
     Point point = circle.getPoint(M_PI);
     Point derivative = circle.getDerivativePoint(M_PI);
     std::cout << point.x << derivative.x << std::endl;

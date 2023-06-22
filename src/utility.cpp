@@ -3,7 +3,11 @@
 
 std::string formatPointToStr(Point point)
 {
-    return ("(" + std::to_string(point.x) + "," + std::to_string(point.y) + "," + std::to_string(point.z) + ")");
+    return (
+            "(" + std::to_string(std::round(point.x * ROUND_POWER) / ROUND_POWER) +
+            "," + std::to_string(std::round(point.y * ROUND_POWER) / ROUND_POWER)) +
+            "," + std::to_string(std::round(point.z * ROUND_POWER) / ROUND_POWER)) + ")"
+            );
 }
 
 void printCoordsAt(const double& t, const std::list<std::shared_ptr<ICurve>>& curves, std::ostream& output)
