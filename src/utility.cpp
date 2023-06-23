@@ -4,9 +4,9 @@
 std::string formatPointToStr(Point point)
 {
     std::ostringstream result;
-    result << "(" << (std::round(point.x * ROUND_POWER) / ROUND_POWER)
-           << "; " << (std::round(point.y * ROUND_POWER) / ROUND_POWER)
-           << "; " << (std::round(point.z * ROUND_POWER) / ROUND_POWER) << ")";
+    result << "(" << (std::round(point.x * roundPower) / roundPower)
+           << "; " << (std::round(point.y * roundPower) / roundPower)
+           << "; " << (std::round(point.z * roundPower) / roundPower) << ")";
     return result.str();
 }
 

@@ -10,8 +10,8 @@
 #define _USE_MATH_DEFINES
 
 
-constexpr double TASK_PARAMETER = M_PI_4;
-constexpr int ROUND_POWER = 1000;  // Represents how many digits would be after comma in rounded number
+static constexpr double taskParameter = M_PI_4;
+static constexpr int roundPower = 1000;  // Represents how many digits would be after comma in rounded number
 
 std::string formatPointToStr(Point point);
 
