@@ -6,10 +6,10 @@
 
 
 int main() {
-    Circle circle(0);
-    Point point = circle.getPoint(M_PI);
-    Point derivative = circle.getDerivativePoint(M_PI);
-    std::cout << point.x << derivative.x << std::endl;
+    Ellipse ellipse(-10, 5);
+    Point point = ellipse.getPoint(TASK_PARAMETER);
+    Point derivative = ellipse.getDerivativePoint(TASK_PARAMETER);
+    std::cout << point.x << derivative.x << formatPointToStr(derivative) << std::endl;
 
     return EXIT_SUCCESS;
 }
