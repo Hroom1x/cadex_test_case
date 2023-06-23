@@ -25,5 +25,5 @@ std::size_t randomUInt(const std::size_t& min, const std::size_t& max);
 
 double randomDouble(const double& min, const double& max);
 
-// Append curves to the curves list
+// Append random curves with random values to the curves list
 void populateWithRandom(const int& number, std::list<std::shared_ptr<ICurve>>& curves);
