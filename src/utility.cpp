@@ -1,6 +1,11 @@
 #include "utility.hpp"
 
 
+bool isLessCirclePtr(const std::shared_ptr<Circle>& l, const std::shared_ptr<Circle>& r)
+{
+    return l->getRadius() < r->getRadius();
+}
+
 std::string formatPointToStr(Point point)
 {
     std::ostringstream result;

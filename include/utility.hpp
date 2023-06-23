@@ -13,6 +13,8 @@
 static constexpr double taskParameter = M_PI_4;
 static constexpr int roundPower = 1000;  // Represents how many digits would be after comma in rounded number
 
+bool isLessCirclePtr(const std::shared_ptr<Circle>& l, const std::shared_ptr<Circle>& r);
+
 std::string formatPointToStr(Point point);
 
 void printCoordsAt(const double& t, const std::list<std::shared_ptr<ICurve>>& curves, std::ostream& output);

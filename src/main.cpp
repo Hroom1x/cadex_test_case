@@ -56,8 +56,11 @@ int main() {
 
     {
         std::list<std::shared_ptr<ICurve>> curves;
-        populateWithRandom(10, curves);
-        std::cout << std::endl;
+        populateWithRandom(100, curves);
+        std::list<std::shared_ptr<Circle>> circles;
+        populateWithCircles(curves, circles);
+        circles.sort(isLessCirclePtr);
+        std::cout << sumCirclesRadii(circles) << std::endl;
     }
 
     return EXIT_SUCCESS;
