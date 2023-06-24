@@ -1,6 +1,6 @@
 #pragma once
 
-#include <omp.h>
+#include <parallel/algorithm>
 
 #include "random_filler.hpp"
 

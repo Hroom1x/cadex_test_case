@@ -4,15 +4,9 @@
 double sumCirclesRadiiParallel(const std::list<std::shared_ptr<Circle>>& circles)
 {
     double result = 0;
-    auto it = circles.cbegin();
-    #pragma omp parallel for default(none) shared(circles, it) reduction(+:result)
-    for (std::size_t i = 0; i < circles.size(); ++i)
+    __gnu_parallel::for_each(circles.begin(), circles.end(), [&result](const std::shared_ptr<Circle>& circle)
     {
-        result += (*it)->getRadius();
-        #pragma omp critical
-        {
-            ++it;
-        }
-    }
+        result += circle->getRadius();
+    });
     return result;
 }
