@@ -1,9 +1,8 @@
 #include <cassert>
 #include <iostream>
+#include <ctime>
 
-#include "curves.hpp"
-#include "random_filler.hpp"
-#include "utility.hpp"
+#include "parallel.hpp"
 
 
 int main() {
@@ -67,10 +66,10 @@ int main() {
     // Populate a container of objects of curve types created in random manner with
     // random parameters.
     std::list<std::shared_ptr<ICurve>> curves;
-    populateWithRandom(100, curves);
+    populateWithRandom(10, curves);
 
     // Print coordinates of points and derivatives of all curves in the container at t=PI/4
-    printCoordsAt(taskParameter, curves, std::cout);
+    //printCoordsAt(taskParameter, curves, std::cout);
 
     // Populate a second container that would contain only circles from the first container.
     std::list<std::shared_ptr<Circle>> circles;
@@ -80,8 +79,13 @@ int main() {
     circles.sort(isLessCirclePtr);
 
     // Compute and print the total sum of radii of all curves in the second container.
+    clock_t start = clock();
     std::cout << "The total sum of radii of all curves in the second container: "
     << sumCirclesRadii(circles) << std::endl;
+    std::cout << "Parallel: " << sumCirclesRadiiParallel(circles) << std::endl;
+    clock_t stop = clock();
+    double elapsed = (double) (stop - start) / CLOCKS_PER_SEC;
+    printf("\nTime elapsed: %.5f\n", elapsed);
 
     return EXIT_SUCCESS;
 }
