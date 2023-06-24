@@ -66,7 +66,7 @@ int main() {
     // Populate a container of objects of curve types created in random manner with
     // random parameters.
     std::list<std::shared_ptr<ICurve>> curves;
-    populateWithRandom(10, curves);
+    populateWithRandom(100, curves);
 
     // Print coordinates of points and derivatives of all curves in the container at t=PI/4
     //printCoordsAt(taskParameter, curves, std::cout);
